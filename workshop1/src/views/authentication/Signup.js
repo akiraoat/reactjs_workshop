@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../assets/images/logo.png';
+
 import bg from '../../assets/images/bg-01.jpg';
 
 const bgImage = {

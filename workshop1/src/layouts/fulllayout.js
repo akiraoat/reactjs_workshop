@@ -12,7 +12,7 @@ class FullLayout extends React.Component {
                 <div id="content-wrapper" className="d-flex flex-column">
                     <div id="content">
                         <Navbar />
-                        <footer />
+                        <Footer />
                     </div>
                 </div>
             </div>
