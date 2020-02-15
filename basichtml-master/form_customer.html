@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>การสร้างฟอร์มรับข้อมูล</title>
+        <link rel="stylesheet" href="Style/customStyle.css">
+    </head>
+        <body>
+            <form>
+                <table class="txtLabel" align="center">
+                    <h1 class="colorH1" align="center">การสร้างฟอร์มรับข้อมูล</h1>
+                    <tr>
+                        <td>คำนำหน้าชื่อ :</td>
+                        <hr>
+                        <td>
+                            <select>
+                                <option>--คำนำหน้าชื่อ--</option>
+                                <option value="1">นาย</option>
+                                <option value="2">นาง</option>
+                                <option value="3">นางสาว</option>
+                                <option value="4">เด็กชาย</option>
+                                <option value="5">เด็กหญิง</option>
+                            </select>
+                        </td>
+                        <td>เพศ :</td>
+                        <td>
+                            <input type="radio" name="เพศ" value="ชาย">ชาย
+                            <input type="radio" name="เพศ" value="หญิง">หญิง
+                        </td> 
+                    </tr>
+                    <tr>
+                        <td>ชื่อ :</td>
+                        <td><input type="text" placeholder=""/></td>
+                        <td>นามสกุล :</td>
+                        <td><input type="text" placeholder=""/></td>
+                    </tr>
+                    <tr>
+                        <td>เบอร์โทรศัพท์มือถือ :</td>
+                        <td><input type="number" placeholder=""/></td>
+                        <td>กรุ๊ปเลือด :</td>
+                        <td>
+                            <select>
+                                <option>--กรุ๊ปเลือด--</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="AB">AB</option>
+                                <option value="O">O</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>ที่อยู่ :</td>
+                        <td colspan="4">
+                            <textarea rows="4" cols="60"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="4" align="center">
+                            <button type="submit">บันทึกข้อมูล</button>
+                            <button type="reset">ล้างข้อมูล</button>
+                            <button><a href="index.html">กลับหน้าหลัก</a></button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </body>
+</html>
