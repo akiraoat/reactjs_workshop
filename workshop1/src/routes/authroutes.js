@@ -1,9 +1,9 @@
-import SignIn from "../views/authentication/Signin";
-import SignUp from "../views/authentication/Signup";
+import SignIn from '../views/authentication/Signin';
+import SignUp from '../views/authentication/Signup';
 
 var authRoutes = [
-  { path: "authentication/signin", name: "signin", component: SignIn },
-  { path: "authentication/signup", name: "signup", component: SignUp }
-];
+    { path: '/signin', name: 'signin', component: SignIn },
+    { path: '/signup', name: 'signup', component: SignUp }
+]
 
 export default authRoutes;

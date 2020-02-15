@@ -3,7 +3,7 @@ import React from "react";
 import "./App.css";
 //import Signin from "./views/authentication/Signin";
 //import Signup from "./views/authentication/Signup";
-//import Fulllayout from "./layouts/fulllaouts";
+//import Fulllayout from "./layouts/fulllayouts";
 
 import { HashRouter, Route, Switch } from "react-router-dom";
 import Blanklayout from "./layouts/blanklayout";

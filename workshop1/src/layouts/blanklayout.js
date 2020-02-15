@@ -18,11 +18,10 @@ class Blanklayout extends React.Component {
               />
             ) : null;
           })}
-          <Redirect from="/" to="/authentication/signin" />
+          <Redirect from="/" to="signup" />
         </Switch>
       </div>
     );
   }
 }
-
 export default Blanklayout;
