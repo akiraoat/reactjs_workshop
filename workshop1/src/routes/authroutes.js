@@ -1,5 +1,5 @@
-import SignIn from '../views/authentication/signin';
-import SignUp from '../views/authentication/signup';
+import SignIn from '../views/authentication/Signin';
+import SignUp from '../views/authentication/Signup';
 
 var authRoutes = [
     { path: '/signin', name: 'signin', component: SignIn },
