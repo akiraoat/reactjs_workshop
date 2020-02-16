@@ -6,7 +6,7 @@ const bgImage = {
     backgroundImage: "url(" + bg + ")",
     backgroundRepeat: "no-repeat",
 };
-
+//sabaijung
 class SignIn extends React.Component {
 
     constructor() {
