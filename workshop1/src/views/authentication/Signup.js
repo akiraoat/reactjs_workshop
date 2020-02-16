@@ -20,6 +20,7 @@ class SignUp extends React.Component {
         }
 
         this.onEmailChange = this.onEmailChange.bind(this);
+        this.onNameChange = this.onNameChange.bind(this);
         this.onUsernameChange = this.onUsernameChange.bind(this);
         this.onPasswordChange = this.onPasswordChange.bind(this);
         this.onPasswordComfirmChange = this.onPasswordComfirmChange.bind(this);
@@ -43,13 +44,18 @@ class SignUp extends React.Component {
         this.setState({ passwordComfirm: e.target.value });
     }
 
+    onNameChange(e) {
+        this.setState({ name: e.target.value });
+    }
+
     onSubmit() {
         let email = this.state.email;
+        let name = this.state.name;
         let username = this.state.username;
         let password = this.state.password;
         let passwordComfirm = this.state.passwordComfirm;
         //alert('Email: ' + email + '\n' + 'Username: ' + username + '\n' + 'Password: ' + password + '\n' + 'PasswordConfirm: ' + passwordComfirm);
-        let url = 'http://localhost/API/index.php/Authen/register?email=' + email + '&name= &username=' + username + '&password=' + passwordComfirm + ''
+        let url = 'http://localhost/API/index.php/Authen/register?email=' + email + '&name= ' + name + '&username=' + username + '&password=' + passwordComfirm + ''
 
         fetch(url)
             .then(res => res.json())
@@ -74,6 +80,12 @@ class SignUp extends React.Component {
                                         <i className="glyphicon glyphicon-envelope"></i>
                                     </span>
                                     <input type="text" className="form-control" placeholder="อีเมล" aria-describedby="basic-addon1" onChange={this.onEmailChange} />
+                                </div>
+                                <div className="input-group form-group">
+                                    <span className="input-group-addon" id="basic-addon1">
+                                        <i className="glyphicon glyphicon-user"></i>
+                                    </span>
+                                    <input type="text" className="form-control" placeholder="ชื่อ-นามสกุล" aria-describedby="basic-addon1" onChange={this.onNameChange} />
                                 </div>
                                 <div className="input-group form-group">
                                     <span className="input-group-addon" id="basic-addon1">
