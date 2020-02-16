@@ -4,7 +4,7 @@ import "./App.css";
 import { HashRouter, Route, Switch } from "react-router-dom";
 import Blanklayout from "./layouts/blanklayout";
 import SignUp from "./views/authentication/Signup";
-//import SignIn from "./views/authentication/Signin";
+import SignIn from "./views/authentication/Signin";
 
 class App extends React.Component {
   render() {

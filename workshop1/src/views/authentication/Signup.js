@@ -20,11 +20,35 @@ class SignUp extends React.Component {
         }
 
         this.onEmailChange = this.onEmailChange.bind(this);
+        this.onUsernameChange = this.onUsernameChange.bind(this);
+        this.onPasswordChange = this.onPasswordChange.bind(this);
+        this.onPasswordComfirmChange = this.onPasswordComfirmChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
 
     }
 
     onEmailChange(e) {
-        this.state({ email: e.target.value });
+        this.setState({ email: e.target.value });
+    }
+
+    onUsernameChange(e) {
+        this.setState({ username: e.target.value });
+    }
+
+    onPasswordChange(e) {
+        this.setState({ password: e.target.value });
+    }
+
+    onPasswordComfirmChange(e) {
+        this.setState({ passwordComfirm: e.target.value });
+    }
+
+    onSubmit() {
+        let email = this.state.email;
+        let username = this.state.username;
+        let password = this.state.password;
+        let passwordComfirm = this.state.passwordComfirm;
+        alert('Email: ' + email + '\n' + 'Username: ' + username + '\n' + 'Password: ' + password + '\n' + 'PasswordConfirm: ' + passwordComfirm);
     }
 
     render() {
@@ -35,7 +59,7 @@ class SignUp extends React.Component {
                     <div className="panel panel-primary" style={{ borderRadius: "2%;" }}>
                         <div className="panel-heading text-center txtLabel">ลงทะเบียน</div>
                         <div className="panel-body">
-                            <form style={{ padding: "30px" }}>
+                            <form style={{ padding: "30px" }} onSubmit={this.onSubmit}>
                                 <div className="input-group form-group">
                                     <span className="input-group-addon" id="basic-addon1">
                                         <i className="glyphicon glyphicon-envelope"></i>
@@ -46,26 +70,26 @@ class SignUp extends React.Component {
                                     <span className="input-group-addon" id="basic-addon1">
                                         <i className="glyphicon glyphicon-user"></i>
                                     </span>
-                                    <input type="text" className="form-control" placeholder="ชื่อผู้ใช้งาน" aria-describedby="basic-addon1" />
+                                    <input type="text" className="form-control" placeholder="ชื่อผู้ใช้งาน" aria-describedby="basic-addon1" onChange={this.onUsernameChange} />
                                 </div>
                                 <div className="input-group form-group">
                                     <span className="input-group-addon" id="basic-addon1">
                                         <i className="glyphicon glyphicon-lock"></i>
                                     </span>
-                                    <input type="password" className="form-control" placeholder="รหัสผ่าน" aria-describedby="basic-addon1" />
+                                    <input type="password" className="form-control" placeholder="รหัสผ่าน" aria-describedby="basic-addon1" onChange={this.onPasswordChange} />
                                 </div>
                                 <div className="input-group form-group">
                                     <span className="input-group-addon" id="basic-addon1">
                                         <i className="glyphicon glyphicon-lock"></i>
                                     </span>
-                                    <input type="password" className="form-control" placeholder="ยืนยันรหัสผ่าน" aria-describedby="basic-addon1" />
+                                    <input type="password" className="form-control" placeholder="ยืนยันรหัสผ่าน" aria-describedby="basic-addon1" onChange={this.onPasswordComfirmChange} />
                                 </div>
                                 <hr />
                                 <div className="txtInput">
                                     <button className="btn btn-lg btn-success btn-block" type="submit">บันทึกข้อมูล</button>
                                     <br />
                                     <p className="text-center">เป็นสมาชิกแล้ว?
-                                    <a href="#Signin">เข้าสู่ระบบ</a>
+                                    <a href="#SignIn">เข้าสู่ระบบ</a>
                                     </p>
                                 </div>
                             </form>

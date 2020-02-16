@@ -33,7 +33,7 @@ class SignIn extends React.Component {
                                 <input type="checkbox" value="remember-me" />จำฉันไว้
                                 </label>
                             <p className="pull-right">ยังไม่ได้เป็นสมาชิก?
-                                    <a href="#SiginUp">ลงทะเบียน</a>
+                                    <a href="#SignUp">ลงทะเบียน</a>
                             </p>
                         </form>
                     </div>
