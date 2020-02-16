@@ -55,7 +55,7 @@ class SignUp extends React.Component {
         let password = this.state.password;
         let passwordComfirm = this.state.passwordComfirm;
         //alert('Email: ' + email + '\n' + 'Username: ' + username + '\n' + 'Password: ' + password + '\n' + 'PasswordConfirm: ' + passwordComfirm);
-        let url = 'http://localhost/API/index.php/Authen/register?email=' + email + '&name= ' + name + '&username=' + username + '&password=' + passwordComfirm + ''
+        let url = 'http://localhost/API/index.php/Authen/register?email=' + email + '&name=' + name + '&username=' + username + '&password=' + passwordComfirm + ''
 
         fetch(url)
             .then(res => res.json())
