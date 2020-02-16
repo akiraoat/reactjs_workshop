@@ -38,7 +38,12 @@ class SignIn extends React.Component {
         fetch(url)
             .then(res => res.json())
             .then(result => {
-                alert(result[0].message);
+                if (result[0].flag == '1') {
+                    alert(result[0].message);
+                    this.props.history.push('/signup');
+                } else {
+                    alert(result[0].message);
+                }
             }, (error) => {
                 alert('Error');
             });
