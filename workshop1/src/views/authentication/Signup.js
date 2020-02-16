@@ -8,6 +8,25 @@ const bgImage = {
 };
 
 class SignUp extends React.Component {
+
+    constructor() {
+        super();
+
+        this.state = {
+            email: '',
+            username: '',
+            password: '',
+            passwordComfirm: '',
+        }
+
+        this.onEmailChange = this.onEmailChange.bind(this);
+
+    }
+
+    onEmailChange(e) {
+        this.state({ email: e.target.value });
+    }
+
     render() {
         return (
             <div className="container-login" style={bgImage}>
@@ -46,7 +65,7 @@ class SignUp extends React.Component {
                                     <button className="btn btn-lg btn-success btn-block" type="submit">บันทึกข้อมูล</button>
                                     <br />
                                     <p className="text-center">เป็นสมาชิกแล้ว?
-                                    <a href="form_signin.html">เข้าสู่ระบบ</a>
+                                    <a href="#Signin">เข้าสู่ระบบ</a>
                                     </p>
                                 </div>
                             </form>
