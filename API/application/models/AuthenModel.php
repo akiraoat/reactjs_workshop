@@ -1,22 +1,47 @@
-<?php
+<?php 
 class AuthenModel extends CI_model {
 
-    public function __construct()
-    {
+	public function __construct(){
         parent::__construct();
-    }
+	}
+	
+	//ใช้สำหรับ ล็อคอิน
+	public function login($username,$password)
+	{
+		$sql = "SELECT * from users 
+		where username ='".$username."' 
+		and password ='".$password."'";
+		$result = $this->db->query($sql);
+		$arrResult = $result->result();
+		$rows = count($result->result());
+        if ($rows > 0) {
+           $rs = array([
+                'username' => $username,
+                'flag' => "0",
+                'message' => "ล็อคอินสำเร็จ",
+            ]);
+        } else {
+            $rs = array([
+                'username' => $username,
+                'flag' => "1",
+                'message' => "กรุณาตรวจสอบข้อมูล",
+            ]);
+        }
 
-    //ใช้สำหรับดึงข้อมูลจากฐานข้อมูลมาแสดง
-    public function getUsers()
-     {
-        $sql = " select * from users ";
-        $result =  $this->db->query($sql);
+		return $rs;
+	}
+
+	//ใช้สำหรับดึงข้อมูลจากฐานข้อมูลมาแสดง
+	public function getUsers()
+	{
+		$sql = " select * from users";
+		$result = $this->db->query($sql);
         $arrResult = $result->result();
-        return $arrResult;
-     }
+		return $arrResult;
+	}
 
-    //ใช้สำหรับอัพเดทข้อมูล เพื่อยกเลิกข้อมูลผู้ใช้งาน
-    public function cancelData($username)
+	//ใช้สำหรับอัพเดตข้อมูล เพื่อยกเลิกข้อมูลผู้ใช้งาน
+	 public function cancelData($username)
     {
         $result = "";
         try {
@@ -31,8 +56,9 @@ class AuthenModel extends CI_model {
         }
         return $result;
 	}
-
-    public function register($username, $password, $email, $name)
+	
+	//ใช้สำหรับบันทึกข้อมูลผู้ใช้งานไปยังฐานข้อมูล
+	public function register($username, $password, $email, $name)
     {
         $sql = "SELECT *
         FROM users
@@ -44,7 +70,7 @@ class AuthenModel extends CI_model {
         if ($rows > 0) {
            $rs = array([
                 'username' => $username,
-                'status' => "0",
+                'flag' => "0",
                 'message' => "ชื่อผู้ใช้งานนี้ เคยลงทะเบียนแล้ว",
             ]);
            
@@ -53,20 +79,23 @@ class AuthenModel extends CI_model {
                 'username' => $username,
                 'password' => $password,
                 'email' => $email,
-                'status' => '1',
-                'name' => $name,
+				'status' => '1',
+				'name' => $name
  
             );
             $this->db->insert('users', $insert_data);
         
             $rs = array([
                 'username' => $username,
-                'status' => "1",
+                'flag' => "1",
                 'message' => "ลงทะเบียนสำเร็จ",
             ]);
         }
 
         return $rs;
+
     }
+
 }
+
 ?>
