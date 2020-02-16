@@ -40,7 +40,7 @@ class SignUp extends React.Component {
                                     <span className="input-group-addon" id="basic-addon1">
                                         <i className="glyphicon glyphicon-envelope"></i>
                                     </span>
-                                    <input type="text" className="form-control" placeholder="อีเมล" aria-describedby="basic-addon1" />
+                                    <input type="text" className="form-control" placeholder="อีเมล" aria-describedby="basic-addon1" onChange={this.onEmailChange} />
                                 </div>
                                 <div className="input-group form-group">
                                     <span className="input-group-addon" id="basic-addon1">
